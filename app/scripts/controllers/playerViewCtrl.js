@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('goatApp')
-  .controller('PlayerViewCtrl', function ($scope, playerService) {
-    playerService.getPlayerByUrl('http%3A%2F%2Fwww.basketball-reference.com%2Fplayers%2Fb%2Fbirdla01.html').
-      then(function (data) {
+  .controller('PlayerViewCtrl', function ($scope, playerService, $routeParams) {
+    playerService.getPlayerByUrl($routeParams.id)
+      .then(function (data) {
         $scope.player = data.results[0];
       });
   });

@@ -19,12 +19,13 @@ describe('Controller: PlayerViewCtrl', function () {
   }));
 
   it('should navigate to player view on click', function () {
-    var playerUrl = 'http://www.basketball-reference.com/players/j/jordami01.html';
+    var playerUrl = 'http://www.basketball-reference.com/players/j/jordami01.html',
+      mockPlayerUrl = 'http%3A%2F%2Fwww.basketball-reference.com%2Fplayers%2Fj%2Fjordami01.html';
 
     spyOn(location, 'path');
 
     scope.gotoPlayer(playerUrl);
 
-    expect(location.path).toHaveBeenCalledWith('/player/' + playerUrl);
+    expect(location.path).toHaveBeenCalledWith('/player/' + mockPlayerUrl);
   });
 });

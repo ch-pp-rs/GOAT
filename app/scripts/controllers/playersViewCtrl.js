@@ -8,7 +8,8 @@ angular.module('goatApp')
       });
 
     $scope.gotoPlayer = function(playerUrl) {
-      console.log(playerUrl);
+      playerUrl = playerUrl.replace(':', '%3A');
+      playerUrl = playerUrl.replace(/\//g, '%2F');
 
       $location.path('/player/' + playerUrl);
     };
