@@ -18,11 +18,25 @@ describe('Service: playerService', function () {
     IO = IMPORTIO;
   }));
 
+  it('should return all players', function () {
+    var promiseResult,
+      url = 'http%3A%2F%2Fwww.basketball-reference.com%2Ffriv%2Fratings.cgi';
+
+    httpMock.expectGET(IO.URL + IO.PLAYERSAPIREF + url + '&_user=' + IO.USERID + '&_apikey=' + IO.APIKEY).respond('test1');
+
+    playerS.getAllPlayers().then(function (data) {
+      promiseResult = data;
+    });
+
+    httpMock.flush();
+    expect(promiseResult).toBe('test1');
+  });
+
   it('should return a player', function () {
     var promiseResult,
       url = 'http%3A%2F%2Fwww.basketball-reference.com%2Fplayers%2Fb%2Fbirdla01.html';
 
-    httpMock.expectGET(IO.URL + url + '&_user=' + IO.USERID + '&_apikey=' + IO.APIKEY).respond('test1');
+    httpMock.expectGET(IO.URL + IO.PLAYERAPIREF + url + '&_user=' + IO.USERID + '&_apikey=' + IO.APIKEY).respond('test1');
 
     playerS.getPlayerByUrl(url).then(function (data) {
       promiseResult = data;
