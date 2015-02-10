@@ -9,21 +9,23 @@ angular.module('goatApp')
         $scope.players = data.results;
       });
 
-    $scope.gotoPlayer = function(playerUrl) {
+    $scope.gotoPlayer = function (playerUrl) {
       playerUrl = playerUrl.replace(':', '%3A');
       playerUrl = playerUrl.replace(/\//g, '%2F');
 
       $location.path('/player/' + playerUrl);
     };
 
-    $scope.comparePlayer = function(playerUrl) {
+    $scope.comparePlayer = function (playerUrl) {
       playerUrl = playerUrl.replace(':', '%3A');
       playerUrl = playerUrl.replace(/\//g, '%2F');
 
       if ($scope.compare.length < 2) {
-        playerService.getPlayerByUrl(playerUrl).then(function (data) {
-          $scope.compare.push(data.results[0]);
-        });
+
       }
+
+      playerService.getPlayerByUrl(playerUrl).then(function (data) {
+        $scope.compare.push(data.results[0]);
+      });
     };
   });
