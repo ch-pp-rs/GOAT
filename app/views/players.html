@@ -1,21 +1,14 @@
 <div class="modal-dialog" style="width: calc(100% - 30px);">
   <div class="modal-content" ng-show="compare.length > 0">
-    <div class="modal-header">
-      <h4 class="modal-title" id="myModalLabel">Compare The Greatest of all Time</h4>
-    </div>
     <div class="row">
       <div class="col-xs-1"></div>
       <div class="col-xs-4 text-right" ng-show="compare[0]">
-        <h4>{{ compare[0].name }}</h4>
-        {{ compare[0].dob }}<br/>
-        {{ compare[0].birthplace }}<br/>
-        {{ compare[0].ave_minutes }}<br/>
-        {{ compare[0].ave_pts }}<br/>
-        {{ compare[0].ave_ast }}<br/>
-        {{ compare[0].ave_trb }}<br/><br/>
+        <gt-player-summary gt-base-player="compare[0]" gt-compare-player="compare[1]"></gt-player-summary>
       </div>
       <div class="col-xs-2 text-center">
-        <b><br/><br/>DOB<br/>
+        <b>
+          <h4>VS</h4>
+          DOB<br/>
           Birthplace<br/>
           Ave Min<br/>
           PPG<br/>
@@ -24,13 +17,7 @@
         </b>
       </div>
       <div class="col-xs-4" ng-show="compare[1]">
-        <h4>{{ compare[1].name }}</h4>
-        {{ compare[1].dob }}<br/>
-        {{ compare[1].birthplace }}<br/>
-        {{ compare[1].ave_minutes }}<br/>
-        {{ compare[1].ave_pts }}<br/>
-        {{ compare[1].ave_ast }}<br/>
-        {{ compare[1].ave_trb }}<br/><br/>
+        <gt-player-summary gt-base-player="compare[1]" gt-compare-player="compare[0]"></gt-player-summary>
       </div>
       <div class="col-xs-1"></div>
     </div>

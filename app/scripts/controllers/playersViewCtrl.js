@@ -3,6 +3,7 @@
 angular.module('goatApp')
   .controller('PlayersViewCtrl', function ($scope, $location, playerService, ngDialog) {
     $scope.compare = [];
+    $scope.players = {};
 
     playerService.getAllPlayers().
       then(function (data) {

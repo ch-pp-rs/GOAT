@@ -1,0 +1,10 @@
+<div>
+    <h4>{{ gtBasePlayer.name }}</h4>
+    {{ gtBasePlayer.dob }}<br/>
+    {{ gtBasePlayer.birthplace }}<br/>
+    <p ng-class="{'text-success': parseInt(gtBasePlayer.ave_minutes) > parseInt(gtComparePlayer.ave_minutes), 'text-danger': parseInt(gtBasePlayer.ave_minutes) < parseInt(gtComparePlayer.ave_minutes)}">{{ gtBasePlayer.ave_minutes }}</p>
+    <p ng-class="{'text-success': parseInt(gtBasePlayer.ave_pts) > parseInt(gtComparePlayer.ave_pts), 'text-danger': parseInt(gtBasePlayer.ave_pts) < parseInt(gtComparePlayer.ave_pts)}">{{ gtBasePlayer.ave_pts }}</p>
+    <p ng-class="{'text-success': parseInt(gtBasePlayer.ave_ast) > parseInt(gtComparePlayer.ave_ast), 'text-danger': parseInt(gtBasePlayer.ave_ast) < parseInt(gtComparePlayer.ave_ast)}">{{ gtBasePlayer.ave_ast }}</p>
+    <p ng-class="{'text-success': parseInt(gtBasePlayer.ave_trb) > parseInt(gtComparePlayer.ave_trb), 'text-danger': parseInt(gtBasePlayer.ave_trb) < parseInt(gtComparePlayer.ave_trb)}">{{ gtBasePlayer.ave_trb }}</p>
+    <br/>
+</div>
