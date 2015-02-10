@@ -1,19 +1,23 @@
-<div class="modal-dialog" style="position: absolute; top: 50px; z-index: 1000; width: calc(100% - 30px);">
+<div class="modal-dialog" style="width: calc(100% - 30px);">
     <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&amp;times;</button>
           <h4 class="modal-title" id="myModalLabel">Modal title</h4>
         </div>
         <div class="modal-body">
-            <h3>Modal Body</h3>
+            {{ compare[0] }}<br />
+            {{ compare[1] }}
         </div>
     </div>
 </div>
 
-<ul class="list-group row pre-scrollable" style="margin-top: 170px;">
+<ul class="list-group row pre-scrollable">
   <li ng-repeat="player in players" class="list-group-item col-xs-6 col-md-4 col-lg-3">
-    {{ player.rank }}: <a ng-click="gotoPlayer(player.name)">{{ player['name/_text'] }}</a>
+    {{ player.rank }}: {{ player['name/_text'] }}
     
-            <button type="button" class="btn btn-primary pull-right">Compare</button>
+    <div class="pull-right">
+      <button type="button" class="btn btn-primary" ng-click="gotoPlayer(player.name)">Full stats</button>
+      <button type="button" class="btn btn-primary" ng-click="comparePlayer(player.name)">Compare</button>
+    </div>
   </li>
 </ul>

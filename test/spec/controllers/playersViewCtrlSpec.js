@@ -28,4 +28,13 @@ describe('Controller: PlayerViewCtrl', function () {
 
     expect(location.path).toHaveBeenCalledWith('/player/' + mockPlayerUrl);
   });
+  
+  it('should add player to compare list', function () {
+    var playerUrl = 'http://www.basketball-reference.com/players/j/jordami01.html',
+      mockPlayerUrl = 'http%3A%2F%2Fwww.basketball-reference.com%2Fplayers%2Fj%2Fjordami01.html';
+
+    scope.comparePlayer(playerUrl);
+
+    expect(scope.compare.length).toBe(1);
+  });
 });
