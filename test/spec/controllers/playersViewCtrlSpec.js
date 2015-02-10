@@ -73,15 +73,4 @@ describe('Controller: PlayerViewCtrl', function () {
     expect(scope.compare.length).toBe(2);
   });
 
-  it('should not add player to compare', function () {
-    var playerUrl = 'http://www.basketball-reference.com/players/j/jordami01.html';
-
-    scope.compare = [{name: 'Magic'}, {name: 'Shaq'}];
-
-    scope.comparePlayer(playerUrl);
-
-    scope.$root.$digest();
-
-    expect(scope.compare.length).toBe(2);
-  });
 });

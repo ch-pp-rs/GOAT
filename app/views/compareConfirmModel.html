@@ -1,0 +1,10 @@
+<p>Who do you wish to compare against?</p>
+<div class="ngdialog-buttons">
+  <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="closeThisDialog(-1)">Cancel</button>
+  <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog(1)">
+     {{ compare[0].name }}
+  </button>
+  <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog(0)">
+     {{ compare[1].name }}
+  </button>
+</div>
