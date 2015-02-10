@@ -1,20 +1,24 @@
-<table>
-  <tr>
-    <td>Name: </td>
-    <td>{{ player.name }}</td>
-  </tr>
-  <tr>
-    <td>Shooting hand: </td>
-    <td>{{ player.shooting_hand }}</td>
-  </tr>
-  <tr>
-    <td>College: </td>
-    <td>{{ player.college }}</td>
-  </tr>
-  <tr>
-    <td>Draft: </td>
-    <td>{{ player.draft }}</td>
-  </tr>
-</table>
-
-{{ player }}
+<div class="col-xs-10">
+  <table>
+    <tr>
+      <td><strong>Name:</strong></td>
+      <td>{{ player.name }}</td>
+    </tr>
+    <tr>
+      <td><strong>Shooting hand:&nbsp;&nbsp;</strong></td>
+      <td>{{ player.shooting_hand }}</td>
+    </tr>
+    <tr>
+      <td><strong>College: </strong></td>
+      <td>{{ player.college }}</td>
+    </tr>
+    <tr>
+      <td><strong>Draft: </strong></td>
+      <td>{{ player.draft }}</td>
+    </tr>
+    <tr ng-repeat="(key, val) in player">
+      <td><strong>{{ key }}</strong></td>
+      <td>{{ val }}</td>
+    </tr>
+  </table>
+</div>
