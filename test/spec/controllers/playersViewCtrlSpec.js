@@ -11,7 +11,6 @@ describe('Controller: PlayerViewCtrl', function () {
     scope,
     location;
 
-  // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope, $location, playerService, $q) {
     scope = $rootScope.$new();
     location = $location;
