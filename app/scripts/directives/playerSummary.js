@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('goatApp').directive('gtPlayerSummary', function () {
         return {
             restrict: 'E',
