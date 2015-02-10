@@ -10,7 +10,6 @@ angular.module('goatApp').directive('gtPlayerSummary', function () {
             },
             link: function (scope) {
                 scope.parseInt = parseInt;
-                console.log(scope.gtBasePlayer);
             }
         };
     });
